@@ -54,8 +54,8 @@ whatsappForm.addEventListener('submit', (e) => {
   const service = document.getElementById('service').value;
   const message = document.getElementById('message').value;
   
-  // MS Sky Interiors WhatsApp Number
-  const waNumber = '918126288860';
+  // Akr Carpenter WhatsApp Number
+  const waNumber = '916201222325';
   
   // Construct the message
   const waMessage = `*New Website Enquiry*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Service Required:* ${service}%0A*Message:* ${message}`;
