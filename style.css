@@ -371,7 +371,7 @@ ul {
 
 /* Highlights */
 .highlights {
-  background: linear-gradient(rgba(15, 15, 17, 0.9), rgba(15, 15, 17, 0.9)), url('/logo.jpeg') center/cover fixed;
+  background: linear-gradient(rgba(15, 15, 17, 0.9), rgba(15, 15, 17, 0.9)), url('/logoi.jpeg') center/cover fixed;
 }
 
 .highlights-grid {
