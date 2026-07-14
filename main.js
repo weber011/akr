@@ -71,30 +71,29 @@ whatsappForm.addEventListener('submit', (e) => {
 });
 
 // ── Site Visit Modal ──
-function openSiteVisit() {
+window.openSiteVisit = function() {
   document.getElementById('site-visit-modal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
 
-function closeSiteVisit(e) {
+window.closeSiteVisit = function(e) {
   if (!e || e.target === document.getElementById('site-visit-modal')) {
     document.getElementById('site-visit-modal').classList.remove('open');
     document.body.style.overflow = '';
-    // Pause video when closing
     const video = document.querySelector('.sv-video video');
     if (video) video.pause();
   }
 }
 
 // ── Lightbox ──
-function openLightbox(src, caption) {
+window.openLightbox = function(src, caption) {
   document.getElementById('lightbox-img').src = src;
   document.getElementById('lightbox-caption').textContent = caption;
   document.getElementById('lightbox').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
 
-function closeLightbox() {
+window.closeLightbox = function() {
   document.getElementById('lightbox').classList.remove('open');
   document.body.style.overflow = '';
 }
@@ -102,7 +101,7 @@ function closeLightbox() {
 // Close lightbox/modal on Escape key
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
-    closeLightbox();
-    closeSiteVisit();
+    window.closeLightbox();
+    window.closeSiteVisit();
   }
 });
