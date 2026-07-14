@@ -13,13 +13,13 @@ const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 
 hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
+  navLinks.classList.toggle('open');
 });
 
 // Close mobile menu when clicking a link
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
-    navLinks.classList.remove('active');
+    navLinks.classList.remove('open');
   });
 });
 
@@ -68,4 +68,41 @@ whatsappForm.addEventListener('submit', (e) => {
   
   // Reset form
   whatsappForm.reset();
+});
+
+// ── Site Visit Modal ──
+function openSiteVisit() {
+  document.getElementById('site-visit-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeSiteVisit(e) {
+  if (!e || e.target === document.getElementById('site-visit-modal')) {
+    document.getElementById('site-visit-modal').classList.remove('open');
+    document.body.style.overflow = '';
+    // Pause video when closing
+    const video = document.querySelector('.sv-video video');
+    if (video) video.pause();
+  }
+}
+
+// ── Lightbox ──
+function openLightbox(src, caption) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox-caption').textContent = caption;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Close lightbox/modal on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeLightbox();
+    closeSiteVisit();
+  }
 });

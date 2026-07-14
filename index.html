@@ -279,58 +279,118 @@
           <h2>Our Portfolio</h2>
           <p>A glimpse into our premium interior transformations across Ranchi.</p>
         </div>
+
+        <!-- Site Visit Button -->
+        <div style="text-align:center; margin-bottom: 40px;" class="fade-in">
+          <button onclick="openSiteVisit()" class="btn btn-site-visit">
+            <i class="fas fa-camera"></i> View Real Site Visits
+          </button>
+        </div>
+
         <div class="gallery-grid">
-          <div class="gallery-item fade-in">
-            <img src="/img1.jpeg" alt="AKR Interior Work 1" loading="lazy">
-            <div class="gallery-overlay"><h4>Premium Interior Work</h4></div>
+          <div class="gallery-item fade-in" onclick="openLightbox('/img1.jpeg','Modular Kitchen Design')">
+            <img src="/img1.jpeg" alt="Modular Kitchen Design" loading="lazy">
+            <div class="gallery-overlay"><h4>Modular Kitchen Design</h4></div>
           </div>
-          <div class="gallery-item fade-in">
-            <img src="/img2.jpeg" alt="AKR Interior Work 2" loading="lazy">
-            <div class="gallery-overlay"><h4>Custom Carpentry</h4></div>
-          </div>
-          <div class="gallery-item fade-in">
-            <img src="/img3.jpeg" alt="AKR Interior Work 3" loading="lazy">
-            <div class="gallery-overlay"><h4>Living Room Design</h4></div>
-          </div>
-          <div class="gallery-item fade-in">
-            <img src="/img4.jpeg" alt="AKR Interior Work 4" loading="lazy">
-            <div class="gallery-overlay"><h4>Modular Kitchen</h4></div>
-          </div>
-          <div class="gallery-item fade-in">
-            <img src="/img5.jpeg" alt="AKR Interior Work 5" loading="lazy">
-            <div class="gallery-overlay"><h4>Bedroom Interior</h4></div>
-          </div>
-          <div class="gallery-item fade-in">
-            <img src="/img6.jpeg" alt="AKR Interior Work 6" loading="lazy">
-            <div class="gallery-overlay"><h4>False Ceiling Design</h4></div>
-          </div>
-          <div class="gallery-item fade-in">
-            <img src="/img7.jpeg" alt="AKR Interior Work 7" loading="lazy">
+          <div class="gallery-item fade-in" onclick="openLightbox('/img2.jpeg','Custom Wardrobe')">
+            <img src="/img2.jpeg" alt="Custom Wardrobe" loading="lazy">
             <div class="gallery-overlay"><h4>Custom Wardrobe</h4></div>
           </div>
-          <div class="gallery-item fade-in">
-            <img src="/img8.jpeg" alt="AKR Interior Work 8" loading="lazy">
-            <div class="gallery-overlay"><h4>TV Unit Design</h4></div>
+          <div class="gallery-item fade-in" onclick="openLightbox('/img3.jpeg','TV Unit & Wall Paneling')">
+            <img src="/img3.jpeg" alt="TV Unit & Wall Paneling" loading="lazy">
+            <div class="gallery-overlay"><h4>TV Unit & Wall Paneling</h4></div>
           </div>
-          <div class="gallery-item fade-in">
-            <img src="/img9.jpeg" alt="AKR Interior Work 9" loading="lazy">
-            <div class="gallery-overlay"><h4>Wall Paneling</h4></div>
+          <div class="gallery-item fade-in" onclick="openLightbox('/img4.jpeg','Custom Carpentry Work')">
+            <img src="/img4.jpeg" alt="Custom Carpentry Work" loading="lazy">
+            <div class="gallery-overlay"><h4>Custom Carpentry Work</h4></div>
           </div>
-          <div class="gallery-item fade-in">
-            <img src="/img1`0.jpeg" alt="AKR Interior Work 10" loading="lazy">
-            <div class="gallery-overlay"><h4>Commercial Fitout</h4></div>
+          <div class="gallery-item fade-in" onclick="openLightbox('/img5.jpeg','Modern Open Kitchen')">
+            <img src="/img5.jpeg" alt="Modern Open Kitchen" loading="lazy">
+            <div class="gallery-overlay"><h4>Modern Open Kitchen</h4></div>
           </div>
-          <div class="gallery-item fade-in">
-            <img src="/img11.jpeg" alt="AKR Interior Work 11" loading="lazy">
-            <div class="gallery-overlay"><h4>Office Interior</h4></div>
+          <div class="gallery-item fade-in" onclick="openLightbox('/img6.jpeg','Classic Wooden Wardrobe')">
+            <img src="/img6.jpeg" alt="Classic Wooden Wardrobe" loading="lazy">
+            <div class="gallery-overlay"><h4>Classic Wooden Wardrobe</h4></div>
           </div>
-          <div class="gallery-item fade-in">
-            <img src="/img12.jpeg" alt="AKR Interior Work 12" loading="lazy">
-            <div class="gallery-overlay"><h4>Wooden Flooring</h4></div>
+          <div class="gallery-item fade-in" onclick="openLightbox('/img7.jpeg','Premium TV Unit Design')">
+            <img src="/img7.jpeg" alt="Premium TV Unit Design" loading="lazy">
+            <div class="gallery-overlay"><h4>Premium TV Unit Design</h4></div>
+          </div>
+          <div class="gallery-item fade-in" onclick="openLightbox('/img8.jpeg','Office Carpentry Fitout')">
+            <img src="/img8.jpeg" alt="Office Carpentry Fitout" loading="lazy">
+            <div class="gallery-overlay"><h4>Office Carpentry Fitout</h4></div>
+          </div>
+          <div class="gallery-item fade-in" onclick="openLightbox('/img9.jpeg','Office Interior Design')">
+            <img src="/img9.jpeg" alt="Office Interior Design" loading="lazy">
+            <div class="gallery-overlay"><h4>Office Interior Design</h4></div>
+          </div>
+          <div class="gallery-item fade-in" onclick="openLightbox('/img1\`0.jpeg','Retail Showroom Interior')">
+            <img src="/img1`0.jpeg" alt="Retail Showroom Interior" loading="lazy">
+            <div class="gallery-overlay"><h4>Retail Showroom Interior</h4></div>
+          </div>
+          <div class="gallery-item fade-in" onclick="openLightbox('/img11.jpeg','Restaurant Interior')">
+            <img src="/img11.jpeg" alt="Restaurant Interior" loading="lazy">
+            <div class="gallery-overlay"><h4>Restaurant Interior</h4></div>
+          </div>
+          <div class="gallery-item fade-in" onclick="openLightbox('/img12.jpeg','Reception Area Design')">
+            <img src="/img12.jpeg" alt="Reception Area Design" loading="lazy">
+            <div class="gallery-overlay"><h4>Reception Area Design</h4></div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Site Visit Modal -->
+    <div id="site-visit-modal" class="sv-modal" onclick="closeSiteVisit(event)">
+      <div class="sv-modal-box">
+        <button class="sv-close" onclick="closeSiteVisit()"><i class="fas fa-times"></i></button>
+        <div class="sv-header">
+          <h3><i class="fas fa-camera"></i> Real Site Visits by AKR</h3>
+          <p>See our actual on-site work across Ranchi</p>
+        </div>
+        <div class="sv-grid">
+          <div class="sv-item">
+            <img src="/site visit img.jpeg" alt="Site Visit 1" loading="lazy">
+          </div>
+          <div class="sv-item">
+            <img src="/site visit img1.jpeg" alt="Site Visit 2" loading="lazy">
+          </div>
+          <div class="sv-item">
+            <img src="/site visit img 2.jpeg" alt="Site Visit 3" loading="lazy">
+          </div>
+          <div class="sv-item">
+            <img src="/site visit img3.jpeg" alt="Site Visit 4" loading="lazy">
+          </div>
+          <div class="sv-item">
+            <img src="/site visit img 5.jpeg" alt="Site Visit 5" loading="lazy">
+          </div>
+          <div class="sv-item">
+            <img src="/site visit img10.jpeg" alt="Site Visit 6" loading="lazy">
+          </div>
+          <div class="sv-item">
+            <img src="/site vist img.jpeg" alt="Site Visit 7" loading="lazy">
+          </div>
+          <div class="sv-item">
+            <img src="/site visti img.jpeg" alt="Site Visit 8" loading="lazy">
+          </div>
+          <div class="sv-item sv-video">
+            <video controls playsinline>
+              <source src="/site  visit video 4.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Image Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+      <div class="lightbox-inner">
+        <button class="sv-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
+        <img id="lightbox-img" src="" alt="">
+        <p id="lightbox-caption"></p>
+      </div>
+    </div>
+
 
     <!-- Why Choose Us Section -->
     <section id="why-us" class="why-us section-padding">
